@@ -1,223 +1,331 @@
-/*********************
-VARIABLES
-**********************/
-
-
-/*********************
-RESPONSIVE BREAKPOINTS
-**********************/
-@mixin breakpoint($point) {
-    @if $point == mobile {
-        @media (max-width: 600px) { @content; }
-    }
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+#cssmenu,
+#cssmenu ul,
+#cssmenu ul li,
+#cssmenu ul li a,
+#cssmenu #menu-button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style: none;
+  line-height: 1;
+  display: block;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
-/*********************
-NAVIGATION STYLES
-**********************/
-
-nav {
-    border-top: 15px solid $ct-dol-dark-blue;
-    border-bottom: 5px solid $ct-dol-dark-blue;
-    text-align:center;  /* this will center */
-    background: $color-nav-bg;
-    /* background: linear-gradient(to bottom, $menu-background 0%, darken($menu-background,7%) 100%); */
-    /* box-shadow:0px 2px 2px rgba(0,0,0,.35); */
-    
-    @include breakpoint(mobile) {
-        margin:65px 0 0 0;
-        max-height:0;
-        overflow:hidden;
-        transition: all 0.5s ease;
-        background:darken(#262626,5%);
-    }
+#cssmenu:after,
+#cssmenu > ul:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
 }
-
-nav > ul {
-    display: inline-block;
+#cssmenu #menu-button {
+  display: none;
 }
-
-nav ul {
-    /* display: inline-block; */
-    /* max-width:$container-width; */
-    list-style:none;
-    
-    @include breakpoint(mobile) {
-        margin:0;
-        padding:0;
-        width:100%;
-        box-shadow:0px 1px 3px rgba(0,0,0,.7);
-        z-index:15;
-    } 
-    
-    li {
-        float:left;
-        position:relative;
-        z-index:1;
-        
-        @include breakpoint(mobile) {
-            float:none;
-            position:relative;
-            margin:0;
-        }
-        
-        a {
-            font-family: $font-basic;
-            font-variant: small-caps;
-            font-size:125%;
-            font-weight: 400;
-            display:block;
-            padding: $link-vertical-padding $link-horizontal-padding;
-            text-align:center;
-            color:$link-color;
-            text-decoration:none;
-            /* border-right:1px solid darken($menu-background,10%); */
-            /* text-shadow:2px 2px 2px rgba(0,0,0,.8); */
-            transition: all 0.1s ease;
-            
-            &:hover {
-                /* background:darken($menu-background,10%); */
-                background: $color-bg-nav-hover;
-                color:$link-hover;
-                transition: all 0.2s ease;
-            }
-
-            @include breakpoint(mobile) {
-                display:table;
-                margin:0;
-                padding:15px 2px;
-                color:white;
-                border-top:1px solid rgba(0,0,0,.15);
-                box-shadow:inset 0px 1px 3px rgba(255,255,255,.03);
-                text-shadow:none;
-                width:100%;
-            }
-        }
-        
-        &:hover ul {
-            opacity:1;
-            max-height:1000px;
-            transition: all 0.3s ease;
-            
-            @include breakpoint(mobile) {
-                max-height:0;
-            } 
-        }
-        
-        /******************
-    SUBNAV
-******************/
-        
-        ul {
-            background:  $color-bg-subnav; /* darken($menu-background,10%); */
-            list-style:none;
-            padding:0;
-            position:absolute;
-            width:200px;
-            max-height:0;
-            z-index:0;
-            opacity:0;
-            overflow:hidden;
-            font-size:.9em;
-            box-shadow:0px 2px 2px rgba(0,0,0,.5);
-            transition: all 0.3s ease;
-            
-            @include breakpoint(mobile) {
-                max-height:0;
-                opacity:1;
-                width:100%;
-                position:relative;
-                overflow:hidden;
-                box-shadow:inset 0px 2px 2px rgba(0,0,0,.5);
-                transition: all 2s ease;
-            }
-            
-            li {
-                float:none;
-                margin:0;
-
-                @include breakpoint(mobile) {
-                    margin:0;
-                }
-                
-                a {
-                    color: $color-subnav;
-                    display:block;
-                    text-align:left;
-                    padding:$link-vertical-padding/1.5 $link-horizontal-padding/1.5;
-                    margin:0;
-                    border-right:none;
-                    border-top:1px solid darken($menu-background,12%);;
-                    box-shadow:inset 0px 1px 3px rgba(255,255,255,.03);
-                    text-transform:none;
-                    text-shadow:none;
-                    transition: all 0.2s ease;
-                    
-                    &:hover {
-                        color:$link-hover;
-                        background:lighten($menu-background,50%);
-                        transition: all 0.5s ease;
-                    }
-
-                    @include breakpoint(mobile) {
-                        color:white;
-                        padding-left:20px;
-                        background:none;
-                    }
-                }
-            }
-        }
-    }
+#cssmenu {
+  z-index: 100;
+  width: auto;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  background: #d0a92b;
+  border-top: 7px solid $ct-dol-dark-blue;
+  /*
+  background: -moz-linear-gradient(top, #d8b442 0%, #ae8e24 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #d8b442), color-stop(100%, #ae8e24));
+  background: -webkit-linear-gradient(top, #d8b442 0%, #ae8e24 100%);
+  background: -o-linear-gradient(top, #d8b442 0%, #ae8e24 100%);
+  background: -ms-linear-gradient(top, #d8b442 0%, #ae8e24 100%);
+  background: linear-gradient(to bottom, #d8b442 0%, #ae8e24 100%);
+  */
 }
-
-
-/***************************
-MOBILE NAV STYLES
-***************************/
-.mobile {
-    display:none;
-    margin:0;
-    padding:20px 15px;
-    background: linear-gradient(to bottom, #353535 0%,#262626 100%);
-    position:absolute;
-    color:white;
-    text-decoration:none;
-    top:15px;
-    right:15px;
-    line-height:0;
-    box-shadow:0px 2px 2px rgba(0,0,0,.35);
-    
-    @include breakpoint(mobile) {
-        display:table;
-    }
+#cssmenu > ul {
+  background: url('bg.png');
+  box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.05);
 }
-
-.active {
-    max-height:9000px !important;
-    transition: all 1s ease;
+#cssmenu.align-right > ul > li {
+  float: right;
 }
-
-@include breakpoint(mobile) {
-    .arrow {
-        display:block;
-        background:url(../images/arrow.png) no-repeat;
-        float:right;
-        height:30px;
-        width:30px;
-        position:absolute;
-        right:25px;
-        top:10px;
-        transition: all 0.3s ease;
-        
-        &:hover {
-            cursor:pointer;
-        }
-    }
-
-    .rotate {
-        transition: all 0.3s ease;
-        -webkit-transform:rotate(-180deg);
-        -moz-transform:rotate(-180deg);
-        -o-transform:rotate(-180deg);
-        transform:rotate(-180deg);
-    }
+#cssmenu > ul > li {
+  float: left;
+  display: inline-block;
+}
+#cssmenu.align-center > ul {
+  float: none;
+  text-align: center;
+  font-size: 0;
+}
+#cssmenu.align-center > ul > li {
+  float: none;
+}
+#cssmenu.align-center ul ul {
+  text-align: left;
+}
+#cssmenu > ul > li > a {
+  padding: 18px 25px 21px 25px;
+  border-right: 1px solid rgba(80, 80, 80, 0.12);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+#cssmenu > ul > li:hover > a,
+#cssmenu > ul > li > a:hover,
+#cssmenu > ul > li.active > a {
+  color: #25393d;
+  background: #c39f28;
+  background: rgba(0, 0, 0, 0.1);
+}
+#cssmenu > ul > li.has-sub > a {
+  padding-right: 45px;
+}
+#cssmenu > ul > li.has-sub > a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-top-color: #ffffff;
+  right: 17px;
+  top: 22px;
+}
+#cssmenu > ul > li.has-sub.active > a::after,
+#cssmenu > ul > li.has-sub:hover > a {
+  border-top-color: #25393d;
+}
+#cssmenu ul ul {
+  position: absolute;
+  left: -9999px;
+  top: 60px;
+  z-index: 9999;
+  padding-top: 6px;
+  font-size: 13px;
+  opacity: 0;
+  -webkit-transition: top 0.2s ease, opacity 0.2s ease-in;
+  -moz-transition: top 0.2s ease, opacity 0.2s ease-in;
+  -ms-transition: top 0.2s ease, opacity 0.2s ease-in;
+  -o-transition: top 0.2s ease, opacity 0.2s ease-in;
+  transition: top 0.2s ease, opacity 0.2s ease-in;
+}
+#cssmenu.align-right ul ul {
+  text-align: right;
+}
+#cssmenu > ul > li > ul::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  border-bottom-color: #ffffff;
+  top: -4px;
+  left: 20px;
+}
+#cssmenu.align-right > ul > li > ul::after {
+  left: auto;
+  right: 20px;
+}
+#cssmenu ul ul ul::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  border-right-color: #ffffff;
+  top: 11px;
+  left: -4px;
+}
+#cssmenu.align-right ul ul ul::after {
+  border-right-color: transparent;
+  border-left-color: #ffffff;
+  left: auto;
+  right: -4px;
+}
+#cssmenu > ul > li > ul {
+  top: 120px;
+}
+#cssmenu > ul > li:hover > ul {
+  top: 52px;
+  left: 0;
+  opacity: 1;
+}
+#cssmenu.align-right > ul > li:hover > ul {
+  left: auto;
+  right: 0;
+}
+#cssmenu ul ul ul {
+  padding-top: 0;
+  padding-left: 6px;
+}
+#cssmenu.align-right ul ul ul {
+  padding-right: 6px;
+}
+#cssmenu ul ul > li:hover > ul {
+  left: 180px;
+  top: 0;
+  opacity: 1;
+}
+#cssmenu.align-right ul ul > li:hover > ul {
+  left: auto;
+  right: 100%;
+  opacity: 1;
+}
+#cssmenu ul ul li a {
+  text-decoration: none;
+  font-weight: 400;
+  padding: 11px 25px;
+  width: 180px;
+  color: #777777;
+  background: #ffffff;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1), 1px 1px 1px rgba(0, 0, 0, 0.1), -1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+#cssmenu ul ul li:hover > a,
+#cssmenu ul ul li.active > a {
+  color: #333333;
+}
+#cssmenu ul ul li:first-child > a {
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+#cssmenu ul ul li:last-child > a {
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+#cssmenu > ul > li > ul::after {
+  position: absolute;
+  display: block;
+}
+#cssmenu ul ul li.has-sub > a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 4px solid transparent;
+  border-left-color: #777777;
+  right: 17px;
+  top: 14px;
+}
+#cssmenu.align-right ul ul li.has-sub > a::after {
+  border-left-color: transparent;
+  border-right-color: #777777;
+  right: auto;
+  left: 17px;
+}
+#cssmenu ul ul li.has-sub.active > a::after,
+#cssmenu ul ul li.has-sub:hover > a::after {
+  border-left-color: #333333;
+}
+#cssmenu.align-right ul ul li.has-sub.active > a::after,
+#cssmenu.align-right ul ul li.has-sub:hover > a::after {
+  border-right-color: #333333;
+  border-left-color: transparent;
+}
+@media all and (max-width: 800px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
+  #cssmenu {
+    background: #d0a92b;
+  }
+  #cssmenu > ul {
+    display: none;
+  }
+  #cssmenu > ul.open {
+    display: block;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  #cssmenu.align-right > ul {
+    float: none;
+  }
+  #cssmenu.align-center > ul {
+    text-align: left;
+  }
+  #cssmenu > ul > li,
+  #cssmenu.align-right > ul > li {
+    float: none;
+    display: block;
+  }
+  #cssmenu > ul > li > a {
+    padding: 18px 25px 18px 25px;
+    border-right: 0;
+  }
+  #cssmenu > ul > li:hover > a,
+  #cssmenu > ul > li.active > a {
+    background: rgba(0, 0, 0, 0.1);
+  }
+  #cssmenu #menu-button {
+    display: block;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    color: #ffffff;
+    padding: 18px 25px 18px 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: url('bg.png');
+    cursor: pointer;
+  }
+  #cssmenu ul ul,
+  #cssmenu ul li:hover > ul,
+  #cssmenu > ul > li > ul,
+  #cssmenu ul ul ul,
+  #cssmenu ul ul li:hover > ul,
+  #cssmenu.align-right ul ul,
+  #cssmenu.align-right ul li:hover > ul,
+  #cssmenu.align-right > ul > li > ul,
+  #cssmenu.align-right ul ul ul,
+  #cssmenu.align-right ul ul li:hover > ul {
+    left: 0;
+    right: auto;
+    top: auto;
+    opacity: 1;
+    width: 100%;
+    padding: 0;
+    position: relative;
+    text-align: left;
+  }
+  #cssmenu ul ul li {
+    width: 100%;
+  }
+  #cssmenu ul ul li a {
+    width: 100%;
+    box-shadow: none;
+    padding-left: 35px;
+  }
+  #cssmenu ul ul ul li a {
+    padding-left: 45px;
+  }
+  #cssmenu ul ul li:first-child > a,
+  #cssmenu ul ul li:last-child > a {
+    border-radius: 0;
+  }
+  #cssmenu #menu-button::after {
+    display: block;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 22px;
+    border-top: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+    right: 25px;
+    top: 18px;
+  }
+  #cssmenu #menu-button::before {
+    display: block;
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 22px;
+    border-top: 2px solid #ffffff;
+    right: 25px;
+    top: 28px;
+  }
+  #cssmenu > ul > li.has-sub > a::after,
+  #cssmenu ul ul li.has-sub > a::after {
+    display: none;
+  }
 }
