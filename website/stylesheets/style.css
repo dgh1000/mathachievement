@@ -1,0 +1,693 @@
+/* Scss Document */
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,700,900,900i");
+@import url("https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,300i,400,400i,500,500i,600,600i,700,700i");
+/* line 5, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* -------------------------------- FONT VARIABLES ------------------ */
+/* -------------------------- CONFIGURING SOME VARIABLES ----------------- */
+/* ------------------------- COLORS ------------------------- */
+/* gold/green theme, dolores */
+/*Controls Menu top & bottom padding*/
+/*Contols Menu left & right padding*/
+/*Control Menu Color Scheme*/
+/* @import "reset.scss"; */
+/* @import "typography.scss"; */
+/*********************
+VARIABLES
+**********************/
+/*********************
+RESPONSIVE BREAKPOINTS
+**********************/
+/*********************
+NAVIGATION STYLES
+**********************/
+/* ??? nav is highest-level element */
+/* line 19, ../sass/_nav.scss */
+nav {
+  border-top: 15px solid #25393d;
+  border-bottom: 5px solid #25393d;
+  text-align: center;
+  /* this will center */
+  /* width: 800px; */
+  /* margin: 0 auto; */
+  background: #d0a92b;
+  /* background: linear-gradient(to bottom, $menu-background 0%, darken($menu-background,7%) 100%); */
+  /* box-shadow:0px 2px 2px rgba(0,0,0,.35); */
+}
+@media (max-width: 600px) {
+  /* line 19, ../sass/_nav.scss */
+  nav {
+    margin: 65px 0 0 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    background: #191919;
+  }
+}
+
+/* line 38, ../sass/_nav.scss */
+nav > ul {
+  display: inline-block;
+}
+
+/* line 42, ../sass/_nav.scss */
+nav ul {
+  /* display: inline-block; */
+  /* max-width:$container-width; */
+  list-style: none;
+}
+@media (max-width: 600px) {
+  /* line 42, ../sass/_nav.scss */
+  nav ul {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.7);
+    z-index: 15;
+  }
+}
+/* line 55, ../sass/_nav.scss */
+nav ul li {
+  float: left;
+  position: relative;
+  z-index: 1;
+  /******************
+  SUBNAV
+  ******************/
+}
+@media (max-width: 600px) {
+  /* line 55, ../sass/_nav.scss */
+  nav ul li {
+    float: none;
+    position: relative;
+    margin: 0;
+  }
+}
+/* line 66, ../sass/_nav.scss */
+nav ul li a {
+  font-family: "Source Sans Pro", sans-serif;
+  font-variant: small-caps;
+  font-size: 125%;
+  font-weight: 400;
+  display: block;
+  padding: 10px 15px;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  /* border-right:1px solid darken($menu-background,10%); */
+  /* text-shadow:2px 2px 2px rgba(0,0,0,.8); */
+  transition: all 0.1s ease;
+}
+/* line 80, ../sass/_nav.scss */
+nav ul li a:hover {
+  /* background:darken($menu-background,10%); */
+  background: #e8e494;
+  color: #25393d;
+  transition: all 0.2s ease;
+}
+@media (max-width: 600px) {
+  /* line 66, ../sass/_nav.scss */
+  nav ul li a {
+    display: table;
+    margin: 0;
+    padding: 15px 2px;
+    color: white;
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
+    box-shadow: inset 0px 1px 3px rgba(255, 255, 255, 0.03);
+    text-shadow: none;
+    width: 100%;
+  }
+}
+/* line 99, ../sass/_nav.scss */
+nav ul li:hover ul {
+  opacity: 1;
+  max-height: 1000px;
+  transition: all 0.3s ease;
+}
+@media (max-width: 600px) {
+  /* line 99, ../sass/_nav.scss */
+  nav ul li:hover ul {
+    max-height: 0;
+  }
+}
+/* line 113, ../sass/_nav.scss */
+nav ul li ul {
+  background: #e8e494;
+  /* darken($menu-background,10%); */
+  list-style: none;
+  padding: 0;
+  position: absolute;
+  width: 200px;
+  max-height: 0;
+  z-index: 0;
+  opacity: 0;
+  overflow: hidden;
+  font-size: .9em;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+}
+@media (max-width: 600px) {
+  /* line 113, ../sass/_nav.scss */
+  nav ul li ul {
+    max-height: 0;
+    opacity: 1;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    box-shadow: inset 0px 2px 2px rgba(0, 0, 0, 0.5);
+    transition: all 2s ease;
+  }
+}
+/* line 137, ../sass/_nav.scss */
+nav ul li ul li {
+  float: none;
+  margin: 0;
+}
+@media (max-width: 600px) {
+  /* line 137, ../sass/_nav.scss */
+  nav ul li ul li {
+    margin: 0;
+  }
+}
+/* line 145, ../sass/_nav.scss */
+nav ul li ul li a {
+  color: #25393d;
+  display: block;
+  text-align: left;
+  padding: 6.66667px 10px;
+  margin: 0;
+  border-right: none;
+  border-top: 1px solid #ddd762;
+  box-shadow: inset 0px 1px 3px rgba(255, 255, 255, 0.03);
+  text-transform: none;
+  text-shadow: none;
+  transition: all 0.2s ease;
+}
+/* line 158, ../sass/_nav.scss */
+nav ul li ul li a:hover {
+  color: #25393d;
+  background: white;
+  transition: all 0.5s ease;
+}
+@media (max-width: 600px) {
+  /* line 145, ../sass/_nav.scss */
+  nav ul li ul li a {
+    color: white;
+    padding-left: 20px;
+    background: none;
+  }
+}
+
+/***************************
+MOBILE NAV STYLES
+***************************/
+/* line 179, ../sass/_nav.scss */
+.mobile {
+  display: none;
+  margin: 0;
+  padding: 20px 15px;
+  background: linear-gradient(to bottom, #353535 0%, #262626 100%);
+  position: absolute;
+  color: white;
+  text-decoration: none;
+  top: 15px;
+  right: 15px;
+  line-height: 0;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.35);
+}
+@media (max-width: 600px) {
+  /* line 179, ../sass/_nav.scss */
+  .mobile {
+    display: table;
+  }
+}
+
+/* line 197, ../sass/_nav.scss */
+.active {
+  max-height: 9000px !important;
+  transition: all 1s ease;
+}
+
+@media (max-width: 600px) {
+  /* line 203, ../sass/_nav.scss */
+  .arrow {
+    display: block;
+    background: url(../images/arrow.png) no-repeat;
+    float: right;
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    right: 25px;
+    top: 10px;
+    transition: all 0.3s ease;
+  }
+  /* line 214, ../sass/_nav.scss */
+  .arrow:hover {
+    cursor: pointer;
+  }
+
+  /* line 219, ../sass/_nav.scss */
+  .rotate {
+    transition: all 0.3s ease;
+    -webkit-transform: rotate(-180deg);
+    -moz-transform: rotate(-180deg);
+    -o-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+  }
+}
+/* @import "contact.scss" */
+/* ------------------------------ boilerplate ----------------------- */
+/* line 60, ../sass/style.scss */
+* {
+  box-sizing: border-box;
+}
+
+/* -------------------------- most generic high-level styling ----------- */
+/* line 65, ../sass/style.scss */
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1.2em;
+  background-color: #25393d;
+}
+
+/* line 71, ../sass/style.scss */
+.spacer-div {
+  margin: 20px;
+}
+
+/* line 76, ../sass/style.scss */
+p {
+  line-height: 150%;
+  margin: 20px 0;
+}
+
+/* line 81, ../sass/style.scss */
+h3 {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1em;
+  padding: 5px 0;
+  margin: 5px 1em;
+  border-bottom: 1px dashed #25393d;
+}
+
+/* -------------------------- container: all styles that are in common to ------------------------ */
+/* --------------------------  every page, both front page and inner pages ---------------------- */
+/* line 94, ../sass/style.scss */
+.container {
+  background-color: #fffcf1;
+  color: #25393d;
+  max-width: 1050px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  /* h1 {
+  	color: $ct-dol-dark-blue;
+  	font-family: $font-fancy;
+  	
+  } */
+  /* border-top: 30px solid $ct-dol-dark-blue; */
+}
+
+/*              link styling */
+/* line 109, ../sass/style.scss */
+a {
+  text-decoration: none;
+  color: #40627c;
+  font-weight: 900;
+}
+
+/* line 115, ../sass/style.scss */
+a:hover {
+  color: #fffcf1;
+  background-color: #40627c;
+}
+
+/* ------------------------ all styling that applies to entire main section -----------------------  */
+/* line 123, ../sass/style.scss */
+main .lead-in {
+  font-style: italic;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 600;
+  font-size: 140%;
+  color: #40627c;
+}
+/* line 131, ../sass/style.scss */
+main .pencil-hr {
+  margin: 0 0;
+  width: 80%;
+}
+
+/* ------------------------------------ header styles ----------------------------------- */
+/* line 140, ../sass/style.scss */
+.front-page-header-img {
+  padding: 10px 20px;
+  margin: 0 auto;
+  text-align: center;
+  background-image: url("../img/einstein-notes-01.png");
+  background-position: cover;
+  border-bottom: 7px solid #25393d;
+}
+/* line 148, ../sass/style.scss */
+.front-page-header-img img {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  width: 800px;
+  max-width: 100%;
+}
+/* line 155, ../sass/style.scss */
+.front-page-header-img p {
+  font-size: 85%;
+  color: #fffcf1;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 900;
+  text-align: right;
+  margin: 0;
+}
+
+/* -------------------------------- styling that applies to main section of front page ----------------- */
+/* line 169, ../sass/style.scss */
+.front-page main h1 {
+  margin: 20px 0px;
+  font-size: 2em;
+}
+
+/* ----------------------------- responsive ---------------------------- */
+/* line 181, ../sass/style.scss */
+main {
+  width: 60%;
+  float: right;
+  padding: 0 20px;
+}
+
+/* line 187, ../sass/style.scss */
+aside {
+  width: 40%;
+  float: right;
+  padding: 0 20px;
+}
+
+/* line 193, ../sass/style.scss */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+@media only screen and (max-width: 600px) {
+  /* line 200, ../sass/style.scss */
+  main, aside {
+    width: 100%;
+  }
+}
+/* ----------------------- hr ---------------------------- */
+/* ------------------------- sidebar boxes ------------------ */
+/* line 211, ../sass/style.scss */
+.sidebar-box {
+  margin: 30px 0px;
+}
+/* line 213, ../sass/style.scss */
+.sidebar-box h1 {
+  text-align: center;
+  font-size: 100%;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  /* font-variant:small-caps; */
+}
+/* line 221, ../sass/style.scss */
+.sidebar-box p {
+  font-size: 90%;
+  font-family: "Source Sans Pro", sans-serif;
+}
+/* line 226, ../sass/style.scss */
+.sidebar-box .lead-in {
+  font-style: normal;
+  font-size: 1em;
+  font-weight: 600;
+  font-family: "Source Sans Pro", sans-serif;
+  color: #d0a92b;
+}
+/* line 234, ../sass/style.scss */
+.sidebar-box ul {
+  /* margin: 20px 20px; */
+  list-style-type: circle;
+  list-style-position: outise;
+  font-size: 90%;
+  margin-left: 2em;
+  line-height: 150%;
+}
+
+/* line 247, ../sass/style.scss */
+.sidebar-spacer-img {
+  width: 100%;
+}
+
+/* line 251, ../sass/style.scss */
+.sidebar-spacer-img-div {
+  width: 80%;
+  margin: auto 20px;
+}
+
+/* ---------------------- floating images ------------------------- */
+/* line 258, ../sass/style.scss */
+.float-left-image {
+  float: left;
+  max-width: 90px;
+  margin-right: 10px;
+}
+
+/* line 264, ../sass/style.scss */
+.float-right-image {
+  float: right;
+  max-width: 90px;
+  margin-left: 10px;
+}
+
+/* ----------------------- main section of front page ------------------ */
+/* --------------------------- inner page ------------------------------- */
+/* line 277, ../sass/style.scss */
+.inner-page header h1 {
+  padding: 10px 10px;
+  background-image: url("../img/einstein-notes-01.png");
+  background-color: #40627c;
+  background-size: 100%;
+  text-align: center;
+  color: #fffcf1;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 300;
+  font-size: 1.6em;
+  letter-spacing: 0.05em;
+}
+
+/* line 292, ../sass/style.scss */
+.inner-page main h1 {
+  font-size: 1.6em;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 700;
+  font-variant: small-caps;
+  letter-spacing: 0.15em;
+  margin-top: 20px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #40627c;
+}
+/* line 302, ../sass/style.scss */
+.inner-page main h2 {
+  font-size: 1.3em;
+  font-weight: 400;
+  font-family: "Source Sans Pro", sans-serif;
+  letter-spacing: 0.1em;
+  margin: 20px 0;
+}
+/* line 309, ../sass/style.scss */
+.inner-page main ul {
+  /* margin: 20px 20px; */
+  list-style-type: circle;
+  list-style-position: outise;
+  font-size: 1em;
+  margin-left: 2em;
+  line-height: 150%;
+}
+
+/* 
+
+.header {
+	padding-top: 30px;
+	padding-left:20px;
+	padding-right:20px;
+	h1 {
+		font-family: $font-fancy;
+		font-style: normal;
+		font-size: 45px;
+		color: $ct-blue-gray;
+	}
+	h2 {
+		font-family: $font-basic;
+		font-size: 30px;
+		font-weight:200;
+		font-style: italic;
+		color: $ct-blue-gray;
+		
+	}
+}
+
+*/
+/* ------------------------------ forms --------------- */
+/* Scss Document */
+/* Style inputs with type="text", select elements and textareas */
+/* line 351, ../sass/style.scss */
+input[type=text], select, textarea {
+  width: 100%;
+  /* Full width */
+  padding: 12px;
+  /* Some padding */
+  border: 1px solid #ccc;
+  /* Gray border */
+  border-radius: 4px;
+  /* Rounded borders */
+  box-sizing: border-box;
+  /* Make sure that padding and width stays in place */
+  margin-top: 6px;
+  /* Add a top margin */
+  margin-bottom: 16px;
+  /* Bottom margin */
+  resize: vertical;
+}
+
+/* Style the submit button with a specific background color etc */
+/* line 363, ../sass/style.scss */
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+/* line 373, ../sass/style.scss */
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+/* Add a background color and some padding around the form */
+/* line 378, ../sass/style.scss */
+.form-container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+/* line 385, ../sass/style.scss */
+.inner-page blockquote {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 600;
+  font-size: 1em;
+  margin-left: 50px;
+  padding: 10px;
+  background-color: #fefefc;
+  color: #25393d;
+  border: 2px dashed #d0a92b;
+}
+/* line 386, ../sass/style.scss */
+.inner-page blockquote .quote-title {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1em;
+  font-size: 90%;
+  font-weight: 200;
+  letter-spacing: 0.2em;
+  margin-top: 0px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+/* line 397, ../sass/style.scss */
+.inner-page blockquote .quote-sig {
+  font-family: "Cormorant Garamond", serif;
+  margin-top: 10px;
+  margin-left: 50px;
+  font-size: 90%;
+}
+
+/* line 414, ../sass/style.scss */
+footer {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 900;
+  text-align: center;
+  background-color: #25393d;
+  padding: 30px;
+  color: white;
+}
+/* line 421, ../sass/style.scss */
+footer a {
+  text-decoration: none;
+  color: white;
+  font-weight: 900;
+}
+/* line 427, ../sass/style.scss */
+footer a:hover {
+  color: #25393d;
+  background-color: white;
+}

@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Math Achievement Tutoring</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="stylesheets/style.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+</head>
+<body>
+
+<div class="container inner-page">
+  <header>
+    <div id="nav-placeholder"></div>
+    <div id="inner-header-placeholder"></div>
+  </header>
+  <div class="row">
+    <main>
+    </main>     
+    <aside>
+      <div id="inner-sidebar-placeholder"></div>
+    </aside>
+  </div>
+  <footer>
+    <div id="footer-placeholder"></div>
+  </footer>
+</div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="js/nav.min.js" ></script>
+<script>
+  $(document).ready(function () {
+  $("#nav-placeholder").load("common-nav.html");	
+  $("#inner-sidebar-placeholder").load("common-inner-sidebar.html");
+  $("#inner-header-placeholder").load("common-inner-header.html");
+  $("#footer-placeholder").load("common-footer.html");
+  })
+</script>
+
+</html>

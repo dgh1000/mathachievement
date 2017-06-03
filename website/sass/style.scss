@@ -1,0 +1,436 @@
+
+/* Scss Document */
+@import "compass/css3";
+
+@import "compass";
+
+@include global-reset;
+
+/* -------------------------------- FONT VARIABLES ------------------ */
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,700,900,900i');
+@import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,300i,400,400i,500,500i,600,600i,700,700i');
+
+
+/* -------------------------- CONFIGURING SOME VARIABLES ----------------- */
+
+$font-fancy: 'Cormorant Garamond', serif;
+$font-basic: 'Source Sans Pro', sans-serif;
+$container-width: 1050px;
+$def-paragraph-vertical-margin: 20px;
+
+
+
+/* ------------------------- COLORS ------------------------- */
+/* gold/green theme, dolores */
+$ct-readable-text: #1e1e1e;
+$ct-mid-gray: #888888;
+
+$ct-dol-yellow: #e8e494;
+$ct-dol-white: #fff9e5;
+$ct-dol-whiterish: #fffcf1;
+$ct-dol-gold: #d0a92b;
+$ct-dol-blue: #40627c;
+$ct-dol-dark-blue: #25393d;
+
+
+$color-of-sides : $ct-dol-dark-blue;
+$color-text-background: $ct-dol-whiterish;
+$color-lead-in: $ct-dol-blue;
+
+$color-nav: $ct-dol-whiterish;
+$color-nav-bg: $ct-dol-gold;
+$color-bg-subnav: $ct-dol-yellow;
+$color-bg-nav-hover: $ct-dol-yellow;
+$color-subnav: $ct-dol-dark-blue;
+$link-color:white;
+$link-hover:$ct-dol-dark-blue;
+$link-vertical-padding:10px;      /*Controls Menu top & bottom padding*/
+$link-horizontal-padding:15px;    /*Contols Menu left & right padding*/
+$menu-background: $ct-dol-yellow;        /*Control Menu Color Scheme*/
+
+$responsive-breakpoint: 600px;
+
+/* @import "reset.scss"; */
+/* @import "typography.scss"; */ 
+@import "nav.scss";
+/* @import "contact.scss" */
+
+
+/* ------------------------------ boilerplate ----------------------- */
+* { box-sizing: border-box; }
+
+
+/* -------------------------- most generic high-level styling ----------- */
+
+body {
+    font-family: $font-basic;
+    font-size:1.2em;
+    background-color: $color-of-sides;
+}
+
+.spacer-div {
+    margin: $def-paragraph-vertical-margin;
+}
+
+
+p {
+    line-height: 150%;
+    margin: $def-paragraph-vertical-margin 0;
+}
+
+h3 {
+    font-family: $font-basic;
+    font-size: 1em;
+    padding: 5px 0;
+    margin: 5px 1em;
+    border-bottom: 1px dashed $ct-dol-dark-blue;
+}
+
+em {
+    font-style: italic;
+}
+
+/* -------------------------- container: all styles that are in common to ------------------ */
+/* --------------------------  every page, both front page and inner pages ----------------- */
+
+.container  {
+    background-color: $color-text-background;
+    color: $ct-dol-dark-blue;
+    max-width: $container-width;
+    width:100%;
+    margin-left: auto;
+    margin-right: auto;
+/* h1 {
+                color: $ct-dol-dark-blue;
+                font-family: $font-fancy;
+
+        } */
+    /* border-top: 30px solid $ct-dol-dark-blue; */
+}
+
+/* ------------------------ link styling -------------- */
+a {
+    text-decoration: none;
+    color: $ct-dol-blue;
+    font-weight: 900;
+}
+
+a:hover {
+    color: $ct-dol-whiterish;
+    background-color: $ct-dol-blue;
+}
+
+/* ----------------------- all styling that applies to entire main section --------------  */
+
+main {
+    .lead-in {
+        font-style: italic;
+        font-family: $font-fancy;
+        font-weight:600;
+        font-size: 140%;
+        color: $color-lead-in;
+    }
+    
+    .pencil-hr {
+        margin: 0 0;
+        width: 80%;
+    }
+
+}
+
+/* ------------------------------------ header styles ----------------------------------- */
+
+.front-page-header-img {
+    padding: 10px 20px;
+    margin: 0 auto;
+    text-align: center;
+    background-image: url("../img/einstein-notes-01.png");
+    background-position:cover;
+    border-bottom: 7px solid $ct-dol-dark-blue;
+
+    img { 
+        margin-left: auto; 
+        margin-right: auto; 
+        display: block;
+        width: 800px;
+        max-width: 100%;
+    }
+    p {
+        font-size: 85%;
+        color: $ct-dol-whiterish;
+        font-family: $font-fancy;
+        font-weight:900;
+        text-align:right;
+        margin: 0;
+    }
+}
+
+
+/* -------------------------------- styling that applies to main section of front page ----------------- */
+
+.front-page main {
+    h1 {
+        margin: 20px 0px;
+        font-size: 2em;
+
+    }
+    h2 {
+        
+    }
+}
+
+
+/* ----------------------------- responsive ---------------------------- */
+main {
+    width:60%;
+    float:right;
+    padding: 0 20px;
+}
+
+aside {
+    width:40%;
+    float:right;
+    padding: 0 20px;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+@media only screen and (max-width:$responsive-breakpoint) {
+    main, aside { width:100%;}
+}
+
+
+
+/* ----------------------- hr ---------------------------- */
+
+
+
+/* ------------------------- sidebar boxes ------------------ */
+
+.sidebar-box {
+    margin: 30px 0px;
+    h1 {
+        text-align: center;
+        font-size: 100%;
+        font-family: $font-fancy;
+        font-weight:400;
+        /* font-variant:small-caps; */ 
+    }
+    
+    p {
+        font-size: 90%;
+        font-family: $font-basic;
+    }
+    
+    .lead-in {
+        font-style: normal;
+        font-size: 1em;
+        font-weight: 600;
+        font-family: $font-basic;
+        color: $ct-dol-gold;
+    }
+    
+    ul {
+        /* margin: 20px 20px; */
+        list-style-type: circle;
+        list-style-position: outise;
+        font-size: 90%;
+        margin-left: 2em;
+        line-height: 150%;
+        
+    }
+
+
+}
+
+.sidebar-spacer-img {
+    width: 100%;
+}
+
+.sidebar-spacer-img-div {
+    width: 80%;
+    margin: auto $def-paragraph-vertical-margin;
+}
+
+
+/* ---------------------- floating images ------------------------- */
+.float-left-image {
+    float:left;
+    max-width:90px;
+    margin-right: 10px;
+}
+
+.float-right-image {
+    float:right;
+    max-width:90px;
+    margin-left: 10px;
+}
+
+/* ----------------------- main section of front page ------------------ */
+
+
+/* --------------------------- inner page ------------------------------- */
+
+
+.inner-page header {
+    h1 { 
+        padding: 10px 10px;
+        background-image: url("../img/einstein-notes-01.png");
+        background-color: $ct-dol-blue;
+        background-size: 100%;
+        text-align: center;
+        color:$ct-dol-whiterish;
+        font-family: $font-fancy;
+        font-weight:300;
+        font-size: 1.6em;
+        letter-spacing:0.05em;
+    }
+}
+
+.inner-page main {
+    h1 {
+        font-size:1.6em;
+        font-family: $font-basic;
+        font-weight:700;
+        font-variant: small-caps;
+        letter-spacing: 0.15em;
+        margin-top: $def-paragraph-vertical-margin;
+        padding-bottom: 10px;
+        border-bottom: 3px solid $ct-dol-blue;
+    }
+    h2 {
+        font-size:1.3em;
+        font-weight: 400;
+        font-family: $font-basic;
+        letter-spacing: 0.1em;
+        margin: $def-paragraph-vertical-margin 0;
+    }
+    ul {
+        /* margin: 20px 20px; */
+        list-style-type: circle;
+        list-style-position: outise;
+        font-size: 1em;
+        margin-left: 2em;
+        line-height: 150%;
+        
+    }
+
+}
+
+/* 
+
+.header {
+        padding-top: 30px;
+        padding-left:20px;
+        padding-right:20px;
+        h1 {
+                font-family: $font-fancy;
+                font-style: normal;
+                font-size: 45px;
+                color: $ct-blue-gray;
+        }
+        h2 {
+                font-family: $font-basic;
+                font-size: 30px;
+                font-weight:200;
+                font-style: italic;
+                color: $ct-blue-gray;
+
+        }
+}
+
+*/
+
+
+
+/* ------------------------------ forms --------------- */
+
+/* Scss Document */
+/* Style inputs with type="text", select elements and textareas */
+input[type=text], select, textarea {
+    width: 100%; /* Full width */
+    padding: 12px; /* Some padding */  
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+/* Add a background color and some padding around the form */
+.form-container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+
+.inner-page blockquote {
+    .quote-title {
+        font-family: $font-basic;
+        font-size: 1em;
+        font-size: 90%;
+        font-weight: 200;
+        letter-spacing: 0.2em;
+        margin-top: 0px;
+        margin-bottom: 5px;
+
+        text-align: center;
+    }
+    .quote-sig {
+        font-family: $font-fancy;
+        margin-top: 10px;
+        margin-left: 50px;
+        font-size: 90%;
+    }
+    font-family: $font-fancy;
+    font-weight: 600;
+    font-size: 1em;
+    margin-left: 50px;
+    padding: 10px;
+    background-color: lighten($ct-dol-gold, 50%);
+    color: $ct-dol-dark-blue;
+    border: 2px dashed $ct-dol-gold;
+
+}
+
+footer {
+    font-family: $font-fancy;
+    font-weight: 900;
+    text-align: center;
+    background-color: $ct-dol-dark-blue;
+    padding: 30px;
+    color:white;
+    a {
+        text-decoration: none;
+        color: white;
+        font-weight: 900;
+    }
+
+    a:hover {
+        color: $ct-dol-dark-blue;
+        background-color: white;
+    }
+    
+}
+
